@@ -1,1 +1,2 @@
-# setup
+editor vim
+microsoft power toys
