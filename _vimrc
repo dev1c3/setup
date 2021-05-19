@@ -63,6 +63,11 @@ autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack
 autocmd filetype python nnoremap <F9> :w <bar> !python %<CR>
 autocmd filetype cpp nnoremap <F10> :!%:r<CR>
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
+nnoremap <C-8> :e! a.py <CR>
+nnoremap <C-9> :e! b.py <CR>
+nnoremap <C-0> :e! c.py <CR>
+nnoremap <C-1> :r template.py <CR>
+
 
 set nu
 augroup numbertoggle
