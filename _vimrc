@@ -48,11 +48,11 @@ au GUIEnter * simalt ~x
 set hls
 set is
 set cb=unnamed
-set gfn=Consolas:h12:b
+set gfn=Consolas:h11
 set ts=4
 set sw=4
 set si
-cd C:\Users\spoti\Documents\vim_
+cd C:\Users\spoti\Documents\cp
 
 inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
@@ -63,11 +63,16 @@ autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack
 autocmd filetype python nnoremap <F9> :w <bar> !python %<CR>
 autocmd filetype cpp nnoremap <F10> :!%:r<CR>
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
-nnoremap <C-8> :e! a.py <CR>
-nnoremap <C-9> :e! b.py <CR>
-nnoremap <C-0> :e! c.py <CR>
-nnoremap <C-1> :r template.py <CR>
 
+nnoremap x "_x
+map <A-1> :tabnew a.py <CR>
+map <A-2> :tabnew b.py <CR>
+map <A-3> :tabnew c.py <CR>
+map <A-4> :tabnew d.py <CR>
+map <A-9> :r template.py <CR>
+map <A-8> :tabnew template.py <CR>
+map <A-q> :q! <CR>
+imap kj <Esc>
 
 set nu
 augroup numbertoggle
@@ -75,3 +80,7 @@ augroup numbertoggle
     autocmd BufEnter,FocusGained,InsertLeave * set rnu
     autocmd BufLeave,FocusLost,InsertEnter * set nornu
 augroup END
+
+
+autocmd BufNewFile *.py 0r C:\Users\spoti\Documents\cp\template.py
+setlocal indentkeys-=:
