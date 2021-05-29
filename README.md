@@ -1,3 +1,1 @@
-editor vim,
-microsoft power toys,
-t clock
+# editor vim, microsoft power toys, t clock
