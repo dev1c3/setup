@@ -1,4 +1,3 @@
-"vimrc_linux
 " Vim with all enhancements
 source $VIMRUNTIME/vimrc_example.vim
 
@@ -60,12 +59,11 @@ inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
 inoremap {} {}
 
-autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
+autocmd filetype cpp nnoremap <F2> :w <bar> !g++ % -o %:r <CR>
 autocmd filetype python nnoremap <F2> :w <bar> !python3 %<CR>
-autocmd filetype cpp nnoremap <F10> :!%:r<CR>
+autocmd filetype cpp nnoremap <F3> :!./%:r<CR>
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
 
-nnoremap x "_x
 imap kj <Esc>
 map <C-a> <esc>ggVG<CR>
 
