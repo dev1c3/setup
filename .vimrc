@@ -52,20 +52,20 @@ set gfn=Consolas:h11
 set ts=4
 set sw=4
 set si
-cd /home/saurav/Documents/vim_/ 
 
 inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
 inoremap {} {}
 
-autocmd filetype cpp nnoremap <F2> :w <bar> !g++ % -o %:r <CR>
-autocmd filetype python nnoremap <F2> :w <bar> !python3 %<CR>
-autocmd filetype cpp nnoremap <F3> :!./%:r<CR>
+autocmd filetype cpp nnoremap <F9> :w <bar> !g++ % -o %:r <CR>
+autocmd filetype python nnoremap <F9> :w <bar> !python3 %<CR>
+autocmd filetype cpp nnoremap <F2> :!./%:r<CR>
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
 
 imap kj <Esc>
 map <C-a> <esc>ggVG<CR>
+map <A-c> "*y
 
 set nu
 augroup numbertoggle
@@ -73,3 +73,7 @@ augroup numbertoggle
     autocmd BufEnter,FocusGained,InsertLeave * set rnu
     autocmd BufLeave,FocusLost,InsertEnter * set nornu
 augroup END
+
+let g:solarized_termcolors=256
+set background=light
+colorscheme solarized
