@@ -34,8 +34,7 @@
  sudo apt-get install fish
  ```
  
- ### put in .bashrc
- ### Launch Fish
+ ### put in .bashrc to launch fish
  ```
  if [ -t 1 ]; then
   exec fish
