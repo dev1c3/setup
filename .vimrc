@@ -60,7 +60,7 @@ inoremap {} {}
 
 autocmd filetype cpp nnoremap <F9> :w <bar> !g++ % -o %:r <CR>
 autocmd filetype python nnoremap <F9> :w <bar> !python3 %<CR>
-autocmd filetype cpp nnoremap <F2> :!./%:r<CR>
+autocmd filetype cpp nnoremap <F10> :!./%:r<CR>
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
 
 imap kj <Esc>
@@ -77,3 +77,28 @@ augroup END
 let g:solarized_termcolors=256
 set background=light
 colorscheme solarized
+
+"cursor switch
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" reset the cursor on start (for older versions of vim, usually not required)
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
+
+"Clipboard configuration
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+        augroup WSLYank
+                    autocmd!
+                            autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+                                augroup END
+                            endif
+ 
+        au BufNewFile,BufRead *.tex
+            \ set nocursorline |
+            \ set nornu |
+            \ set number |
+            \ let g:loaded_matchparen=1 |
